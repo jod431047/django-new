@@ -9,6 +9,6 @@ class ProductAdmin(SummernoteModelAdmin):
     list_display = ['name', 'price']
     list_filter = ['name', 'price']
     search_fields = ['name', 'price']
+    summernote_fields = '__all__'
 
 admin.site.register(Products, ProductAdmin)
-summernote_fields = '__all__'
