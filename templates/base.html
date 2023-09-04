@@ -18,7 +18,10 @@
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'ltr/css/bootstrap.css' %}" />
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'ltr/css/bootstrap.css' %}" /> 
+  
+ 
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
@@ -45,13 +48,13 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call : company_data.phones
+                  {{company_data.call_us}}
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  Email : 
+                 {{company_data.email_us}}
                 </span>
               </a>
             </div>
@@ -97,7 +100,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="">
               <span>
-                gfhztds
+              {{company_data}}
               </span>
             </a>
 
@@ -141,7 +144,7 @@
           <h5>
             <a href="" class="navbar-brand">
               <span>
-                Minics
+              {{company_data}}
               </span>
             </a>
           </h5>
@@ -165,7 +168,7 @@
             Information
           </h5>
           <p>
-            Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+          {{company_data.subtitle}}
           </p>
         </div>
       </div>
@@ -238,7 +241,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://github.com/zbari023">Ziad Bari</a>
+        <a href="https://github.com/jod431047">Jihad Abdl Azize</a>
       </p>
     </div>
   </footer>
