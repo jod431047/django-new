@@ -26,6 +26,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('',home),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 
