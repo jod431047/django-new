@@ -2,28 +2,31 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from products.models import Products
 from accounts.models import UserProfile
+# Create your views here.
 
 def home(request):
-    products = Products.objects.all()[:12] 
+    products = Products.objects.all()[:12] # just for limit products
     
     return render(request,'settings/home.html',{'products':products})
 
 def about(request):
     return render(request,'settings/about.html',{})
 
-def testimonial(request):
-    return render(request,'settings/testimonial.html',{})
-
 def why(request):
     return render(request,'settings/why.html',{})
 
-def profile(request):
+def testimonial(request):
+    return render(request,'settings/testimonial.html',{})
+
+
+""" def profile_user(request):
     data = UserProfile.objects.all()
-    return render(request,'settings/profile.html',{'data':data})
+    return render(request,'settings/profile_user.html',{'data':data}) """
+    
 
 
 @login_required
-def profiluser(request):
+def profile_user(request):
     user_profile = request.user.user_profile
 
     # Retrieve the profile fields
@@ -34,7 +37,8 @@ def profiluser(request):
 
     # Add other fields you want to retrieve
 
-    return render(request, 'settings/profil_user.html', {
+    return render(request, 'settings/profile_user.html', {
+        'user_profile' : user_profile ,
         'bio': bio,
         'profile_picture': profile_picture,
         'address': address,

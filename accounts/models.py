@@ -4,7 +4,7 @@ from utils.generate_code import generate_code
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User,related_name='user_profile', on_delete=models.CASCADE)
-    description = models.TextField(blank=True)
+    bio = models.TextField(blank=True)
     profile_picture = models.ImageField(upload_to='accounts', blank=True, null=True)
     address = models.CharField(max_length=200)
     code = models.CharField(max_length=10,default=generate_code)
