@@ -19,7 +19,7 @@ from django.urls import path ,include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from settings.views import home , about , testimonial , why
+from settings.views import home , about , testimonial , why , profile
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('',home),
     path('about/', about),
     path('testimonial/', testimonial),
+    path('profile/', profile),
     path('why/', why),
     path("__debug__/", include("debug_toolbar.urls")),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from products.models import Products
+from accounts.models import UserProfile
 
 def home(request):
     products = Products.objects.all()[:12] 
@@ -14,3 +15,7 @@ def testimonial(request):
 
 def why(request):
     return render(request,'settings/why.html',{})
+
+def profile(request):
+    data = UserProfile.objects.all()
+    return render(request,'settings/profile.html',{'data':data})
